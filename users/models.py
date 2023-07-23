@@ -9,8 +9,8 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
     
-    def save(self): #changing the way the save method works 
-        super().save()
+    def save(self, *args, **kwargs): #changing the way the save method works 
+        super().save(*args, **kwargs)
 
         #resizing the image uploaded
         img = Image.open(self.image.path)
